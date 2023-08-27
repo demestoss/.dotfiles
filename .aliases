@@ -1,0 +1,151 @@
+#!/usr/bin/env bash
+
+# File Tree
+alias ll="exa -l -g --icons --git"
+alias llt="exa -1 --icons --tree --git-ignore"
+alias lsa='ls -lah'
+alias ls='exa'
+alias l='exa -a'
+alias la='exa -lh --all'
+
+alias md='mkdir -p'
+
+# Core
+alias grep='grep --color=auto'
+alias cl="clear"
+alias vim=nvim
+
+# Directory management
+zc() {
+  z $1
+  code .
+}
+
+# Git
+# Check if main exists and use instead of master
+function git_main_branch() {
+  command git rev-parse --git-dir &>/dev/null || return
+  local ref
+  for ref in refs/{heads,remotes/{origin,upstream}}/{main,trunk,mainline,default}; do
+    if command git show-ref -q --verify $ref; then
+      echo ${ref:t}
+      return
+    fi
+  done
+  echo master
+}
+
+# Check for develop and similarly named branches
+function git_develop_branch() {
+  command git rev-parse --git-dir &>/dev/null || return
+  local branch
+  for branch in dev devel development; do
+    if command git show-ref -q --verify refs/heads/$branch; then
+      echo $branch
+      return
+    fi
+  done
+  echo develop
+}
+
+function git_current_branch() {
+  local ref
+  ref=$(__git_prompt_git symbolic-ref --quiet HEAD 2> /dev/null)
+  local ret=$?
+  if [[ $ret != 0 ]]; then
+    [[ $ret == 128 ]] && return  # no git repo.
+    ref=$(__git_prompt_git rev-parse --short HEAD 2> /dev/null) || return
+  fi
+  echo ${ref#refs/heads/}
+}
+
+alias ga='git add'
+alias gaa='git add --all'
+
+alias gb='git branch'
+alias gba='git branch --all'
+alias gbd='git branch --delete'
+alias gbD='git branch --delete --force'
+
+alias gc='git commit --verbose'
+alias gc!='git commit --verbose --amend'
+alias gcn!='git commit --verbose --no-edit --amend'
+alias gcam='git commit --all --message'
+
+alias gcf='git config --list'
+alias ghh='git help'
+
+alias gcm='git checkout $(git_main_branch)'
+alias gcd='git checkout $(git_develop_branch)'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gcp='git cherry-pick'
+
+alias gf='git fetch'
+alias gfa='git fetch --all --prune --jobs=10'
+alias gfo='git fetch origin'
+
+alias gp='git push'
+alias gpsup='git push --set-upstream origin $(git_current_branch)'
+
+alias gl='git pull'
+alias glg='git log --stat'
+
+alias gm='git merge'
+alias grb='git rebase'
+
+alias gss='git status --short'
+alias gst='git status'
+
+alias gsta='git stash push'
+
+alias gstaa='git stash apply'
+alias gstl='git stash list'
+alias gstd='git stash drop'
+
+gpa() {
+  gaa
+  gcam $1
+  gp
+}
+
+gpasup() {
+  gaa
+  gcam $1
+  gpsup
+}
+
+gcbd() {
+  gcd
+  gl
+  git checkout $1 2>/dev/null || git checkout -b $1
+}
+
+# Tmux
+alias ta='tmux attach -t'
+alias tad='tmux attach -d -t'
+alias ts='tmux new-session -s'
+alias tl='tmux list-sessions'
+alias tksv='tmux kill-server'
+alias tsk='tmux kill-session -t'
+alias tsn='tmux display-message -p "#S"'
+
+t() {
+  bash ~/.config/scripts/t.sh $1 $2
+}
+
+tt() {
+  bash ~/.config/scripts/tt.sh $1
+}
+
+# Git + Tmux
+
+gct() {
+  NAME=""
+  if [ "$1" != "" ]; then
+    NAME="$1"/
+  fi
+  NAME+=$(tsn)
+  gcbd $NAME 
+}
+
