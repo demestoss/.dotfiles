@@ -1,0 +1,2 @@
+set previewer $XDG_CONFIG_HOME/lf/lf_kitty_preview
+set cleaner $XDG_CONFIG_HOME/lf/lf_kitty_clean

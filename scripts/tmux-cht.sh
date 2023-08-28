@@ -8,7 +8,7 @@ read -p "Enter Query: " query
 
 if grep -qs "$selected" ~/.config/tmux/.tmux-cht-languages; then
     query=`echo $query | tr ' ' '+'`
-    tmux neww bash -c "curl cht.sh/$selected/$query | bat --paging=always"
+    tmux neww bash -c "curl cht.sh/$selected/$query | bat -p --paging=always"
 else
-    tmux neww bash -c "curl -s cht.sh/$selected~$query | bat --paging=always"
+    tmux neww bash -c "curl -s cht.sh/$selected~$query | bat -p --paging=always"
 fi

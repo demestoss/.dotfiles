@@ -13,6 +13,8 @@ chsh -s $(which zsh)
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 #source "$HOME/.cargo/env"
 cargo install fnm
+fnm install 18.17.1
+fnm use 18.17.1
 
 # direnv
 curl -sfL https://direnv.net/install.sh | bash
@@ -27,12 +29,13 @@ curl -sS https://starship.rs/install.sh | sh
 cargo install exa
 
 # bat
-curl cht.sh/golang/slice | bat
+cargo install --locked bat
 
 # fzf
 sudo apt install fzf
 
 # tmux
+apt install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # neovim
