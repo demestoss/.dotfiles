@@ -20,10 +20,10 @@ font pango:JetBrainsMono NF 10
 #font pango:DejaVu Sans Mono 8
 
 assign [class="kitty"] $ws1
-assign [class="Firefox"] $ws2
+assign [class="firefox"] $ws2
 
-exec --no-startup-id sleep 3 && firefox
-exec --no-startup-id sleep 2 && kitty
+exec --no-startup-id sleep 2 && firefox
+exec --no-startup-id sleep 3 && kitty
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
