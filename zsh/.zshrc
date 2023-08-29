@@ -80,6 +80,8 @@ zplug load
 #   export EDITOR='mvim'
 # fi
 
+source ~/.config/lf/lfcd.sh
+
 unsetopt beep
 eval "$(fnm env --use-on-cd)"
 eval "$(direnv hook zsh)"

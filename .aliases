@@ -8,6 +8,8 @@ alias ls='exa'
 alias l='exa -a'
 alias la='exa -lh --all'
 
+alias lf='lfcd'
+
 alias md='mkdir -p'
 
 # Core
