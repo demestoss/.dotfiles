@@ -57,6 +57,8 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec kitty
 
+bindsym $mod+Tab workspace back_and_forth
+
 # kill focused window
 bindsym $mod+q kill
 
