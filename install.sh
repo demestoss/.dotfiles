@@ -49,8 +49,3 @@ sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 
 # zplug
 zplug install
-
-# i3-restore
-sudo apt-get install xdotool jq
-git clone https://github.com/jdholtz/i3-restore.git
-
