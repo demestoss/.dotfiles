@@ -30,7 +30,7 @@ FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
 
 
 # User configuration
-source $HOME/dotfiles/.aliases
+source $XDG_CONFIG_HOME/.aliases
 
 # Zplug Plugins
 source $ZPLUG_HOME/init.zsh
@@ -80,7 +80,7 @@ zplug load
 #   export EDITOR='mvim'
 # fi
 
-source ~/.config/lf/lfcd.sh
+source $XDG_CONFIG_HOME/lf/lfcd.sh
 
 unsetopt beep
 eval "$(fnm env --use-on-cd)"
