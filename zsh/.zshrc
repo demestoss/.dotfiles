@@ -82,6 +82,8 @@ zplug load
 
 source $XDG_CONFIG_HOME/lf/lfcd.sh
 
+[ -f ~/.cargo/env ] && source $HOME/.cargo/env
+
 unsetopt beep
 eval "$(fnm env --use-on-cd)"
 eval "$(direnv hook zsh)"

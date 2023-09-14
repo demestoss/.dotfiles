@@ -7,8 +7,7 @@ alias s="kitty +kitten ssh"
 alias ll="exa -l -g --icons --git"
 alias llt="exa -1 --icons --tree --git-ignore"
 alias lsa='ls -lah'
-alias ls='exa'
-alias l='exa -a'
+alias l='exa'
 alias la='exa -lh --all'
 
 alias lf='lfcd'
