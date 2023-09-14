@@ -134,14 +134,6 @@ alias tksv='tmux kill-server'
 alias tsk='tmux kill-session -t'
 alias tsn='tmux display-message -p "#S"'
 
-t() {
-  bash $XDG_CONFIG_HOME/scripts/t.sh $1 $2
-}
-
-tt() {
-  bash $XDG_CONFIG_HOME/scripts/tt.sh $1
-}
-
 # Git + Tmux
 
 gct() {

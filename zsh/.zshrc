@@ -30,7 +30,7 @@ FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
 
 
 # User configuration
-source $XDG_CONFIG_HOME/.aliases
+source $XDG_CONFIG_HOME/aliases/.aliases
 
 # Zplug Plugins
 source $ZPLUG_HOME/init.zsh
