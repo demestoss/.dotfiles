@@ -30,7 +30,7 @@ FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
 
 
 # User configuration
-source $XDG_CONFIG_HOME/aliases/.aliases
+source $XDG_CONFIG_HOME/.aliases
 
 # Zplug Plugins
 source $ZPLUG_HOME/init.zsh
@@ -80,7 +80,7 @@ zplug load
 #   export EDITOR='mvim'
 # fi
 
-source $XDG_CONFIG_HOME/lf/lfcd.sh
+source ~/.dotfiles/lf/lfcd.sh
 
 [ -f ~/.cargo/env ] && source $HOME/.cargo/env
 

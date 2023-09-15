@@ -1,12 +1,8 @@
 . "$HOME/.cargo/env"
 
-if [[ -z "$XDG_CONFIG_HOME" ]]
-then
-        export XDG_CONFIG_HOME="$HOME/.config/"
-fi
-
+export XDG_CONFIG_HOME="$HOME/.config"
 export KITTY_CONFIG_DIRECTORY=$XDG_CONFIG_HOME
-export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
 
 # make CapsLock behave like Ctrl:
 #setxkbmap -option ctrl:nocaps
