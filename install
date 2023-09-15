@@ -7,3 +7,5 @@ do
     stow $folder
 done
 popd
+
+ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
