@@ -10,8 +10,6 @@ setopt hist_ignore_dups  # ignore duplication command history list
 setopt hist_ignore_space # ignore when commands starts with space
 setopt share_history     # share command history data
 
-EDITOR=nvim
-
 # ZPlug
 export ZPLUG_HOME=$HOME/.zplug
 
@@ -80,11 +78,12 @@ zplug load
 #   export EDITOR='mvim'
 # fi
 
-source ~/.dotfiles/lf/lfcd.sh
+[ -f $XDG_CONFIG_HOME/lf/lfcd.sh ] && source $XDG_CONFIG_HOME/lf/lfcd.sh
 
 [ -f ~/.cargo/env ] && source $HOME/.cargo/env
 
 unsetopt beep
+
 eval "$(fnm env --use-on-cd)"
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh)"

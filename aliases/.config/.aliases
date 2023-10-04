@@ -17,7 +17,10 @@ alias md='mkdir -p'
 # Core
 alias grep='grep --color=auto'
 alias cl="clear"
+
+# Vim
 alias vim=nvim
+alias vi=nvim
 
 # Directory management
 zc() {
