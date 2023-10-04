@@ -9,6 +9,8 @@ export VISUAL=nvim
 export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
 export VIMDATA="$HOME/.local/share/nvim"
 
+export PATH="$HOME/.local/scripts:$PATH"
+
 # make CapsLock behave like Ctrl:
 #setxkbmap -option ctrl:nocaps
 # make short-pressed Ctrl behave like Escape:
