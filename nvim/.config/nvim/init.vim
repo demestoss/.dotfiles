@@ -3,9 +3,10 @@ lua require('config')
 set scrolloff=16
 
 set noshowmode
+set smartindent
 colorscheme catppuccin-mocha
 
-nnoremap <leader>pv :Vex<CR>
+nnoremap <leader>e :Neotree toggle reveal<CR>
 nnoremap <C-j> :cnext<CR>
 nnoremap <C-k> :cprev<CR>
 nnoremap <C-E> :copen<CR>
