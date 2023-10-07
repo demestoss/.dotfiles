@@ -1,24 +1,11 @@
 lua require('config')
 
-au TextYankPost * silent! lua vim.highlight.on_yank()
-
 set scrolloff=16
-set number 
-set relativenumber 
-set expandtab
-set shiftwidth=4
-set tabstop=4 softtabstop=4
-set smartindent
 
-set termguicolors
 set noshowmode
-colorscheme catppuccin-macchiato
-
-let mapleader = " "
+colorscheme catppuccin-mocha
 
 nnoremap <leader>pv :Vex<CR>
-nnoremap <C-p> :GFiles<CR>
-nnoremap <leader>pf :Files<CR>
 nnoremap <C-j> :cnext<CR>
 nnoremap <C-k> :cprev<CR>
 nnoremap <C-E> :copen<CR>
