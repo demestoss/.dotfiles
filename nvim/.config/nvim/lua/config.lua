@@ -23,40 +23,17 @@ require("lazy").setup({
   },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { 'freddiehaddad/feline.nvim' },
-  { 'xiyaowong/transparent.nvim' },
   { 'junegunn/fzf' },
   { 'junegunn/fzf.vim' },
   { 'ThePrimeagen/vim-be-good' },
 })
 
 require("catppuccin").setup {
-    highlight_overrides = {
-        all = function(colors)
-            return {
-                NvimTreeNormal = { fg = colors.none },
-                CmpBorder = { fg = "#3e4145" },
-            }
-        end,
-        latte = function(latte)
-            return {
-                Normal = { fg = latte.base },
-            }
-        end,
-        frappe = function(frappe)
-            return {
-                ["@comment"] = { fg = frappe.surface2, style = { "italic" } },
-            }
-        end,
-        macchiato = function(macchiato)
-            return {
-                LineNr = { fg = macchiato.overlay1 },
-            }
-        end,
-        mocha = function(mocha)
-            return {
-                Comment = { fg = mocha.flamingo },
-            }
-        end,
+    flavour = "macchiato",
+    transparent_background = true,
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false
     },
     custom_highlights = function(colors)
         return {
