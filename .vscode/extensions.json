@@ -1,17 +1,16 @@
 {
 	"recommendations": [
-    		// Code
 		"dbaeumer.vscode-eslint",
 		"esbenp.prettier-vscode",
 		"pmneo.tsimporter",
 		"steoates.autoimport",
-    		"usernamehw.errorlens",
+    	"usernamehw.errorlens",
 		"yoavbls.pretty-ts-errors",
-    		// UI
-    		"equinusocio.vsc-material-theme-icons",
-    		"zhuangtongfa.material-theme",
-    		// Vim Cheatsheet
-		"vintharas.learn-vim",
+    	"equinusocio.vsc-material-theme-icons",
+    	"zhuangtongfa.material-theme",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "s-nlf-fh.glassit",
 		"vscodevim.vim"
 	]
 }
