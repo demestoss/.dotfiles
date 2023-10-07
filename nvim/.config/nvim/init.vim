@@ -24,4 +24,4 @@ nnoremap <leader>/ :nohls<CR>
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <leader>x :!chmod +x %<CR>
 
-nnoremap <silent> <C-f> :silent !tmux neww tt<CR>
+nnoremap <silent> <C-t> :silent !tmux neww tt<CR>
