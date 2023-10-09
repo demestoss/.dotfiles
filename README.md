@@ -1,9 +1,16 @@
+Install stow
 ```
-bash install.sh
+sudo apt install stow build-essential
+or
+pacman -S stow
 ```
 
+Bootstrap configs for linux
 ```
-bash bootstrap.sh
+zsh linux
 ```
 
-Restart shell
+Bootstrap configs for linux desktop
+```
+zsh linux-desktop
+```
