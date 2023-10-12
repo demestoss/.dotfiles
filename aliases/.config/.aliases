@@ -22,12 +22,6 @@ alias cl="clear"
 alias vim=nvim
 alias vi=nvim
 
-# Directory management
-zc() {
-  z $1
-  code .
-}
-
 # Git
 # Check if main exists and use instead of master
 function git_main_branch() {
@@ -145,6 +139,6 @@ gct() {
     NAME="$1"/
   fi
   NAME+=$(tsn)
-  gcbd $NAME 
+  gcbd $NAME
 }
 
