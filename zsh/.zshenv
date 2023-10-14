@@ -12,6 +12,6 @@ export VIMDATA="$HOME/.local/share/nvim"
 export PATH="$HOME/.local/scripts:$PATH"
 
 # make CapsLock behave like Ctrl:
-#setxkbmap -option ctrl:nocaps
+setxkbmap -option ctrl:nocaps
 # make short-pressed Ctrl behave like Escape:
-#xcape -e 'Control_L=Escape'
+xcape -e 'Control_L=Escape'
