@@ -28,7 +28,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 1.0
+  opacity: 0.85
   # opacity: 0.80
 
   # Window decorations
@@ -755,15 +755,12 @@ colors: *Catppuccin-Mocha
 #  animation: EaseOutExpo
 #  duration: 0
 #  color: '#ffffff'
-
 # selection:
 # semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
-
 # When set to `true`, selected text will be copied to the primary clipboard.
 # save_to_clipboard: false
 # Allow terminal applications to change Alacritty's window title.
 # dynamic_title: true
-
 # cursor:
 # Cursor style
 #
@@ -772,7 +769,6 @@ colors: *Catppuccin-Mocha
 #   - _ Underline
 #   - | Beam
 # style: Block
-
 # If this is `true`, the cursor will be rendered as a hollow box when the
 # window is not focused.
 # unfocused_hollow: true
