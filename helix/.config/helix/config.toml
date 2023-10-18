@@ -1,0 +1,40 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+mouse = true
+auto-save = true
+idle-timeout = 250
+true-color = true
+color-modes = true
+text-width = 150
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+center = ["diagnostics"]
+right = ["selections", "position", "version-control", "file-line-ending", "file-type", "position-percentage"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = true
+
+[editor.indent-guides]
+render = true
+character = "┊" 
+skip-levels = 1
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 
+wrap-indicator = ""
