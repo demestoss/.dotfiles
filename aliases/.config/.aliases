@@ -131,6 +131,12 @@ alias tksv='tmux kill-server'
 alias tsk='tmux kill-session -t'
 alias tsn='tmux display-message -p "#S"'
 
+# Zellij
+alias za='zellij attach'
+alias zl='zellij list-sessions'
+alias zh='zellij help'
+alias zs='zellij -s'
+
 # Git + Tmux
 
 gct() {

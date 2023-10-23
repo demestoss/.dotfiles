@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+HOME_REPLACER=""                                          # default to a noop
+echo "$HOME" | grep -E "^[a-zA-Z0-9\-_/.@]+$" &>/dev/null # chars safe to use in sed
+HOME_SED_SAFE=$?
+if [ $HOME_SED_SAFE -eq 0 ]; then # $HOME should be safe to use in sed
+	HOME_REPLACER="s|^$HOME/|~/|"
+fi
+
+RESULT=$(zoxide query -l | fzf --reverse)
+
+if [ "$RESULT" = "" ]; then # no result
+  exit 0                     # exit silently
+fi
+
+if [ $HOME_SED_SAFE -eq 0 ]; then
+  RESULT=$(echo "$RESULT" | sed -e "s|^~/|$HOME/|") # get real home path back
+fi
+
+FOLDER=$(basename "$RESULT")
+SESSION_NAME=""
+if [ "$1" = "" ]; then
+  SESSION_NAME=$(echo "$FOLDER" | tr ' .:' '_')
+else
+  SESSION_NAME="$1"
+fi
+
+# We're outside of zellij, so lets create a new session or attach to a new one.
+if [[ -z $ZELLIJ ]]; then
+	cd $RESULT
+	zellij attach $SESSION_NAME -c options --default-cwd $RESULT
+	exit 0
+fi
+
+zellij action new-tab --layout "default" --name $SESSION_NAME --cwd $RESULT
+zellij action go-to-tab-name $SESSION_NAME
+
