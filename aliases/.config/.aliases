@@ -135,7 +135,9 @@ alias tsn='tmux display-message -p "#S"'
 alias za='zellij attach'
 alias zl='zellij list-sessions'
 alias zh='zellij help'
-alias zs='zellij -s'
+alias zc='zellij -s'
+alias zka='zellij kill-all-sessions'
+alias zk='zellij kill-session'
 
 # Git + Tmux
 
