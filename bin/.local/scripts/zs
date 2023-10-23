@@ -7,31 +7,31 @@ if [ $HOME_SED_SAFE -eq 0 ]; then # $HOME should be safe to use in sed
 	HOME_REPLACER="s|^$HOME/|~/|"
 fi
 
-RESULT=$(zoxide query -l | fzf --reverse)
+project_dir=$(zoxide query -l | fzf --reverse)
 
-if [ "$RESULT" = "" ]; then # no result
+if [ "$project_dir" = "" ]; then # no result
   exit 0                     # exit silently
 fi
 
 if [ $HOME_SED_SAFE -eq 0 ]; then
-  RESULT=$(echo "$RESULT" | sed -e "s|^~/|$HOME/|") # get real home path back
+  project_dir=$(echo "$project_dir" | sed -e "s|^~/|$HOME/|") # get real home path back
 fi
 
-FOLDER=$(basename "$RESULT")
-SESSION_NAME=""
+directory=$(basename "$project_dir")
+session_name=""
 if [ "$1" = "" ]; then
-  SESSION_NAME=$(echo "$FOLDER" | tr ' .:' '_')
+  session_name=$(echo "$directory" | tr ' .:' '_')
 else
-  SESSION_NAME="$1"
+  session_name="$1"
 fi
 
 # We're outside of zellij, so lets create a new session or attach to a new one.
 if [[ -z $ZELLIJ ]]; then
-	cd $RESULT
-	zellij attach $SESSION_NAME -c options --default-cwd $RESULT
+	cd $project_dir
+	zellij attach $session_name -c options --default-cwd $project_dir
 	exit 0
 fi
 
-zellij action new-tab --layout "default" --name $SESSION_NAME --cwd $RESULT
-zellij action go-to-tab-name $SESSION_NAME
+zellij action new-tab --layout "default" --name $session_name --cwd $project_dir
+zellij action go-to-tab-name $session_name
 

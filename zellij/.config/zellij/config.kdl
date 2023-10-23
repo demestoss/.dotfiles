@@ -1,7 +1,3 @@
-on_force_close "detach"
-simplified_ui true
-theme "catppuccin-mocha"
-
 keybinds clear-defaults=true {
 	normal {
 		unbind "Ctrl p"
@@ -93,15 +89,15 @@ keybinds clear-defaults=true {
 		bind "o" { SearchToggleOption "WholeWord"; }
 	}
 	entersearch {
-		bind "Ctrl s" "Esc" { SwitchToMode "Scroll"; }
+		bind "Ctrl ^" "Esc" { SwitchToMode "Scroll"; }
 		bind "Enter" { SwitchToMode "Search"; }
 	}
 	renametab {
-		bind "Ctrl c" { SwitchToMode "Normal"; }
+		bind "Ctrl r" { SwitchToMode "Normal"; }
 		bind "Esc" { UndoRenameTab; SwitchToMode "Tab"; }
 	}
 	renamepane {
-		bind "Ctrl c" { SwitchToMode "Normal"; }
+		bind "Ctrl r" { SwitchToMode "Normal"; }
 		bind "Esc" { UndoRenamePane; SwitchToMode "Pane"; }
 	}
 	session {
@@ -161,10 +157,10 @@ keybinds clear-defaults=true {
 		bind "Ctrl n" { SwitchToMode "Resize"; }
 	}
 	shared_except "scroll" "locked" {
-		bind "Ctrl s" { SwitchToMode "Scroll"; }
+		bind "Ctrl ^" { SwitchToMode "Scroll"; }
 	}
 	shared_except "session" "locked" {
-		bind "Ctrl x" { SwitchToMode "Session"; }
+		bind "Ctrl s" { SwitchToMode "Session"; }
 	}
 	shared_except "tab" "locked" {
 		bind "Ctrl t" { SwitchToMode "Tab"; }
@@ -177,6 +173,9 @@ keybinds clear-defaults=true {
 	}
 }
 
+on_force_close "detach"
+simplified_ui true
+theme "catppuccin-mocha"
 
 // pane_frames false
 ui {
