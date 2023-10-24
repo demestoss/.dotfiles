@@ -8,7 +8,7 @@ export VISUAL=nvim
 export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
 export VIMDATA="$HOME/.local/share/nvim"
 
-export PATH="$HOME/.local/scripts:$PATH"
+export PATH="$HOME/.local/scripts/zellij-sessionizerz:$HOME/.local/scripts:$PATH"
 
 # make CapsLock behave like Ctrl:
 setxkbmap -option ctrl:nocaps
