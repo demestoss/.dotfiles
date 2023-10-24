@@ -27,7 +27,25 @@ fi
 
 # We're outside of zellij, so lets create a new session or attach to a new one.
 if [[ -z $ZELLIJ ]]; then
-	cd $project_dir
+  session=$(zellij list-sessions | grep "^$session_name$")
+  if [ "$session" = "" ]; then
+    layout="default"
+    layout_dir=$(zellij setup --check | grep "LAYOUT DIR" | grep -o '".*"' | tr -d '"')
+
+    if [ "$layout_dir" != "" ]; then
+      layouts=$(find $layout_dir | tail -n+2)
+      layouts="$layouts"
+      layout_path=$(echo "$layouts" | fzf --preview 'bat {}')
+      layout=$(basename "$layout_path" | sed 's/\.kdl$//')
+    fi
+
+    if [ "$layout" = "" ]; then
+      layout="default"
+    fi
+
+    zellij -s $session_name --layout $layout options --default-cwd $project_dir
+    exit 0
+  fi
 	zellij attach $session_name -c options --default-cwd $project_dir
 	exit 0
 fi

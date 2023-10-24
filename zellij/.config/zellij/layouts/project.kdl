@@ -1,0 +1,35 @@
+layout {
+  default_tab_template {
+    pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+    }
+    children
+    pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+  }
+
+  tab name="Editor" focus=true {
+    pane edit="." {
+      focus true
+    }
+  }
+
+  tab name="Term" {
+    pane split_direction="vertical" {
+      pane name="checkout dev" {
+        command "git"
+        args "checkout" "dev"
+      }
+
+      pane name="git" {
+        command "git"
+        args "pull"
+      }
+    }
+  }
+
+  tab name="Runner" {
+    pane
+  }
+}
