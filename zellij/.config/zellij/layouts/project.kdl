@@ -16,16 +16,16 @@ layout {
   }
 
   tab name="Term" {
-    pane split_direction="vertical" {
-      pane name="checkout dev" {
-        command "git"
-        args "checkout" "dev"
-      }
+    pane name="git"
 
-      pane name="git" {
-        command "git"
-        args "pull"
-      }
+    pane name="checkout dev" {
+      command "git"
+      args "checkout" "dev"
+    }
+
+    pane name="git pull" {
+      command "git"
+      args "pull"
     }
   }
 
