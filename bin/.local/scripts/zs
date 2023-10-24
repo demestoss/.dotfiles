@@ -46,6 +46,9 @@ get_layout() {
 # We're outside of zellij, so lets create a new session or attach to a new one.
 if [[ -z $ZELLIJ ]]; then
   session=$(zellij list-sessions | grep "^$session_name$")
+
+  cd $project_dir
+
   if [ "$session" = "" ]; then
     layout=$(get_layout)
 

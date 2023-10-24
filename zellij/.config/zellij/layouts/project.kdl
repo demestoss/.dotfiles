@@ -10,9 +10,7 @@ layout {
   }
 
   tab name="Editor" focus=true {
-    pane edit="." {
-      focus true
-    }
+    pane edit="."
   }
 
   tab name="Term" {
