@@ -53,7 +53,7 @@ zplug load
 
 # Tmux session login
 #if [[ "$TERM" != "screen" ]] && [[ "$SSH_CONNECTION" == "" ]]; then
-#    # Attempt to discover a detached session and attach 
+#    # Attempt to discover a detached session and attach
 #    # it, else create a new session
 #    WHOAMI="default"
 #
@@ -78,9 +78,9 @@ zplug load
 #   export EDITOR='mvim'
 # fi
 
-[ -f $XDG_CONFIG_HOME/lf/lfcd.sh ] && source $XDG_CONFIG_HOME/lf/lfcd.sh
-
 [ -f ~/.cargo/env ] && source $HOME/.cargo/env
+
+bindkey -s ^f "zs^M"
 
 unsetopt beep
 

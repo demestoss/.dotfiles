@@ -10,6 +10,15 @@ keybinds clear-defaults=true {
 	locked {
 		bind "Ctrl g" { SwitchToMode "Normal"; }
 	}
+  move {
+    bind "Ctrl m" { SwitchToMode "Normal"; }
+    bind "n" "Tab" { MovePane; }
+    bind "p" { MovePaneBackwards; }
+    bind "h" "Left" { MovePane "Left"; }
+    bind "j" "Down" { MovePane "Down"; }
+    bind "k" "Up" { MovePane "Up"; }
+    bind "l" "Right" { MovePane "Right"; }
+  }
 	resize {
 		bind "Ctrl n" { SwitchToMode "Normal"; }
 		bind "h" "Left" { Resize "Increase Left"; }
@@ -152,6 +161,9 @@ keybinds clear-defaults=true {
 	}
 	shared_except "pane" "locked" {
 		bind "Ctrl a" { SwitchToMode "Pane"; }
+	}
+  shared_except "move" "locked" {
+		bind "Ctrl m" { SwitchToMode "Move"; }
 	}
 	shared_except "resize" "locked" {
 		bind "Ctrl n" { SwitchToMode "Resize"; }
