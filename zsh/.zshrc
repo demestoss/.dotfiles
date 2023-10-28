@@ -80,7 +80,8 @@ zplug load
 
 [ -f ~/.cargo/env ] && source $HOME/.cargo/env
 
-bindkey -s ^f "zs^M"
+alias zs="zellij-smart-sessionizer"
+bindkey -s ^f "zellij-smart-sessionizer^M"
 
 unsetopt beep
 

@@ -7,6 +7,6 @@
 [submodule "work"]
 	path = work
 	url = git@github.com:demestoss/work-dotfiles.git
-[submodule "bin/.local/scripts/zellij-sessionizerz"]
-	path = bin/.local/scripts/zellij-sessionizerz
-	url = git@github.com:demestoss/zellij-sessionizerz.git
+[submodule "bin/.local/scripts/zellij-smart-sessionizer"]
+	path = bin/.local/scripts/zellij-smart-sessionizer
+	url = git@github.com:demestoss/zellij-smart-sessionizer.git
