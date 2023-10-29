@@ -10,7 +10,3 @@ export VIMDATA="$HOME/.local/share/nvim"
 
 export PATH="$HOME/.local/scripts/zellij-smart-sessionizer:$HOME/.local/scripts:$PATH"
 
-# make CapsLock behave like Ctrl:
-setxkbmap -option ctrl:nocaps
-# make short-pressed Ctrl behave like Escape:
-xcape -e 'Control_L=Escape'

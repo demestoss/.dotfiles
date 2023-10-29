@@ -78,12 +78,16 @@ zplug load
 #   export EDITOR='mvim'
 # fi
 
+unsetopt beep
+
 [ -f ~/.cargo/env ] && source $HOME/.cargo/env
 
 alias zs="zellij-smart-sessionizer"
 bindkey -s ^f "zellij-smart-sessionizer^M"
 
-unsetopt beep
+if [[ -x "$(command -v zellij)" ]]; then
+    eval "$(zellij setup --generate-completion zsh | grep "^function")"
+fi;
 
 eval "$(fnm env --use-on-cd)"
 eval "$(direnv hook zsh)"
