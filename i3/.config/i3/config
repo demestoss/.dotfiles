@@ -534,9 +534,9 @@ strip_workspace_numbers yes
 exec_always setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:alt_shift_toggle &
 
 # make CapsLock behave like Ctrl:
-exec_always setxkbmap -option ctrl:nocaps
+exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 # make short-pressed Ctrl behave like Escape:
-exec_always xcape -e 'Control_L=Escape'
+exec_always --no-startup-id xcape -e 'Control_L=Escape'
 
 # set desktop background with custom effect
 exec --no-startup-id betterlockscreen -w dim
