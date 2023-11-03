@@ -10,18 +10,18 @@ layout {
   }
 
   tab name="Editor" focus=true {
-    pane edit="."
+    pane edit="." close_on_exit=false
   }
 
   tab name="Term" {
     pane name="git"
 
-    pane name="checkout dev" {
+    pane name="checkout dev" close_on_exit=true {
       command "git"
       args "checkout" "dev"
     }
 
-    pane name="git pull" {
+    pane name="git pull" close_on_exit=true {
       command "git"
       args "pull"
     }
