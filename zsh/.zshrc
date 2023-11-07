@@ -2,6 +2,9 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 setopt auto_cd
 
+export EDITOR=nvim
+export VISUAL=nvim
+
 ## command history configuration
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=1000000

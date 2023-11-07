@@ -189,6 +189,8 @@ on_force_close "detach"
 simplified_ui true
 theme "catppuccin-mocha"
 
+pane_viewport_serialization true
+
 // pane_frames false
 ui {
     pane_frames {
