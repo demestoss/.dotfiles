@@ -190,6 +190,7 @@ simplified_ui true
 theme "catppuccin-mocha"
 
 pane_viewport_serialization true
+mouse_mode false
 
 // pane_frames false
 ui {
