@@ -784,9 +784,12 @@ colors: *Catppuccin-Mocha
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-# shell:
-#  program: /bin/bash
-#  args:
+shell:
+  program: /usr/bin/zsh
+  args:
+    - -l
+    - -c
+    - zellij-smart-sessionizer;zsh -l
 #    - --login
 # Startup directory
 #
