@@ -96,3 +96,11 @@ eval "$(fnm env --use-on-cd)"
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+
+# pnpm
+export PNPM_HOME="/home/dmitriy/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
