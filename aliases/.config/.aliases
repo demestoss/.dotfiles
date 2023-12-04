@@ -25,39 +25,39 @@ alias vi=nvim
 # Git
 # Check if main exists and use instead of master
 function git_main_branch() {
-  command git rev-parse --git-dir &>/dev/null || return
-  local ref
-  for ref in refs/{heads,remotes/{origin,upstream}}/{main,trunk,mainline,default}; do
-    if command git show-ref -q --verify $ref; then
-      echo ${ref:t}
-      return
-    fi
-  done
-  echo master
+    command git rev-parse --git-dir &>/dev/null || return
+    local ref
+    for ref in refs/{heads,remotes/{origin,upstream}}/{main,trunk,mainline,default}; do
+        if command git show-ref -q --verify $ref; then
+            echo ${ref:t}
+            return
+        fi
+    done
+    echo master
 }
 
 # Check for develop and similarly named branches
 function git_develop_branch() {
-  command git rev-parse --git-dir &>/dev/null || return
-  local branch
-  for branch in dev devel development; do
-    if command git show-ref -q --verify refs/heads/$branch; then
-      echo $branch
-      return
-    fi
-  done
-  echo develop
+    command git rev-parse --git-dir &>/dev/null || return
+    local branch
+    for branch in dev devel development; do
+        if command git show-ref -q --verify refs/heads/$branch; then
+            echo $branch
+            return
+        fi
+    done
+    echo develop
 }
 
 function git_current_branch() {
-  local ref
-  ref=$(__git_prompt_git symbolic-ref --quiet HEAD 2> /dev/null)
-  local ret=$?
-  if [[ $ret != 0 ]]; then
-    [[ $ret == 128 ]] && return  # no git repo.
-    ref=$(__git_prompt_git rev-parse --short HEAD 2> /dev/null) || return
-  fi
-  echo ${ref#refs/heads/}
+    local ref
+    ref=$(__git_prompt_git symbolic-ref --quiet HEAD 2> /dev/null)
+    local ret=$?
+    if [[ $ret != 0 ]]; then
+        [[ $ret == 128 ]] && return  # no git repo.
+        ref=$(__git_prompt_git rev-parse --short HEAD 2> /dev/null) || return
+    fi
+    echo ${ref#refs/heads/}
 }
 
 alias ga='git add'
@@ -105,21 +105,21 @@ alias gstl='git stash list'
 alias gstd='git stash drop'
 
 gpa() {
-  gaa
-  gcam $1
-  gp
+    gaa
+    gcam $1
+    gp
 }
 
 gpasup() {
-  gaa
-  gcam $1
-  gpsup
+    gaa
+    gcam $1
+    gpsup
 }
 
 gcbd() {
-  gcd
-  gl
-  git checkout $1 2>/dev/null || git checkout -b $1
+    gcd
+    gl
+    git checkout $1 2>/dev/null || git checkout -b $1
 }
 
 # Tmux
@@ -142,11 +142,15 @@ alias zk='zellij kill-session'
 # Git + Tmux
 
 gct() {
-  NAME=""
-  if [ "$1" != "" ]; then
-    NAME="$1"/
-  fi
-  NAME+=$(tsn)
-  gcbd $NAME
+    NAME=""
+    if [ "$1" != "" ]; then
+        NAME="$1"/
+    fi
+    NAME+=$(tsn)
+    gcbd $NAME
 }
 
+alias ghc="gh copilot"
+alias "?git"="gh copilot suggest -t git"
+alias "??"="gh copilot suggest -t shell"
+alias "?e"="gh copilot explain"
