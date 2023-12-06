@@ -1,2 +1,4 @@
 tmux/.config/tmux/plugins/
 nvim/lazy-lock.json
+bin/.local/state
+bin/.local/share
