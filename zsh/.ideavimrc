@@ -47,6 +47,9 @@ nnoremap <leader>h :action Diff.SelectedChange<CR>
 
 nnoremap ]h :action JumpToNextChange<CR>
 
+nnoremap K :action ShowHoverInfo<CR>
+vnoremap K :action ShowHoverInfo<CR>
+
 nnoremap U :redo<CR>
 vnoremap U :redo<CR>
 

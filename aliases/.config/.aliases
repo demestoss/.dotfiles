@@ -19,8 +19,8 @@ alias grep='grep --color=auto'
 alias cl="clear"
 
 # Vim
-alias vim=nvim
-alias vi=nvim
+# alias vim=nvim
+# alias vi=nvim
 
 # Git
 # Check if main exists and use instead of master

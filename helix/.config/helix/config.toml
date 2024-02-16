@@ -1,10 +1,10 @@
-theme = "catppuccin_mocha"
+theme = "tokyonight"
 
 [editor]
 line-number = "relative"
 mouse = true
 auto-save = true
-idle-timeout = 250
+idle-timeout = 135
 true-color = true
 color-modes = true
 text-width = 150

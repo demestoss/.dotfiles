@@ -730,7 +730,7 @@ schemes:
 # *SolarizedLight
 # *SolarizedDark
 # *TomorrowNight
-colors: *Catppuccin-Mocha
+colors: *GruvboxDark
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once

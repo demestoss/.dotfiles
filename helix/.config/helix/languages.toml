@@ -1,7 +1,5 @@
-[[language]]
-name = "rust"
-indent = { tab-width = 2, unit = "  "}
+[language-server.rust-analyzer.config.check]
+command = "clippy"
 
-[language-server.rust-analyzer.config]
-cargo.features = "all"
-rust-analyzer.check.command = "clippy"
+[languae-server.rust-analyzer]
+
