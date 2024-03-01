@@ -130,6 +130,61 @@ key = "End"
 mode = "~Alt"
 mods = "Shift"
 
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F10"
+
+[[keyboard.bindings]]
+chars = "\u0001n"
+key = "]"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001p"
+key = "["
+mods = "command"
+
+[[keyboard.bindings]]
+chars = "\u0001c"
+key = "t"
+mods = "command"
+
+[[keyboard.bindings]]
+chars = "\u0001x"
+key = "w"
+mods = "command"
+
+[[keyboard.bindings]]
+chars = "\u0001)"
+key = ")"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001("
+key = "("
+mods = "command"
+
+[[keyboard.bindings]]
+chars = "\u0001s"
+key = "s"
+mods = "command"
+
+[[keyboard.bindings]]
+chars = "\u0001$"
+key = "r"
+mods = "command"
+
+[[keyboard.bindings]]
+chars = "\u0001,"
+key = "n"
+mods = "command"
+
+[[keyboard.bindings]]
+chars = "\u0001["
+key = "/"
+mods = "command"
+
+
 # [[schemes.Catppuccin-Frappe.indexed_colors]]
 # color = "#EF9F76"
 # index = 16
