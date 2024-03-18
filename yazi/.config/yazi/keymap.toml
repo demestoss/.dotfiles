@@ -1,0 +1,28 @@
+[[manager.prepend_keymap]]
+on   = [ "<C-s>" ]
+run  = 'shell "$SHELL" --block --confirm'
+desc = "Open shell here"
+
+[[input.prepend_keymap]]
+on   = [ "<Esc>" ]
+run  = "close"
+desc = "Cancel input"
+
+[[manager.prepend_keymap]]
+on   = [ "l" ]
+run  = "plugin --sync smart-enter"
+desc = "Enter the child directory, or open the file"
+
+[[manager.prepend_keymap]]
+on  = [ "y" ]
+run = [ "yank", '''
+	shell --confirm 'echo "$@" | xclip -i -selection clipboard -t text/uri-list'
+''' ]
+
+[[manager.prepend_keymap]]
+on  = [ "k" ]
+run = "plugin --sync arrow --args=-1"
+
+[[manager.prepend_keymap]]
+on  = [ "j" ]
+run = "plugin --sync arrow --args=1"
