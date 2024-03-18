@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 # SSH
-alias s="kitty +kitten ssh"
+# alias s="kitty +kitten ssh"
 
 # File Tree
-alias ll="exa -l -g --icons --git"
-alias llt="exa -1 --icons --tree --git-ignore"
+alias ll="eza -l -g --icons --git"
+alias llt="eza -1 --icons --tree --git-ignore"
 alias lsa='ls -lah'
-alias l='exa'
-alias la='exa -lh --all'
+alias l='eza'
+alias la='eza -lh --all'
 
 alias lf='lfcd'
 
@@ -17,6 +17,15 @@ alias md='mkdir -p'
 # Core
 alias grep='grep --color=auto'
 alias cl="clear"
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # Vim
 # alias vim=nvim
