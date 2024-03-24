@@ -3,3 +3,4 @@ nvim/lazy-lock.json
 bin/.local/state
 bin/.local/share
 bin/.local/bin
+.git

@@ -1,1 +1,6 @@
 default_startup_script = "~/.config/sesh/scripts/default.sh"
+
+[[startup_scripts]]
+session_path = "~/.dotfiles"
+script_path = "~/.config/sesh/scripts/dotfiles.sh"
+

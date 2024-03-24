@@ -16,6 +16,8 @@ config.window_frame = {
 }
 
 config.window_decorations = "RESIZE"
+config.window_background_opacity = 0.8
+config.macos_window_background_blur = 80
 
 config.window_padding = {
   left = 0,
@@ -42,8 +44,8 @@ config.keys = {
   { key = 's', mods = 'CMD', action = act.SendString '\x01j' },
   { key = 'r', mods = 'CMD', action = act.SendString '\x01$' },
   { key = 'n', mods = 'CMD', action = act.SendString '\x01,' },
-  { key = 'k', mods = 'CMD', action = act.SendString '\x01k' },
-  { key = 'j', mods = 'CMD', action = act.SendString '\x01j' },
+  -- { key = 'k', mods = 'CMD', action = act.SendString '\x01k' },
+  { key = 'j', mods = 'CMD', action = act.SendString '\x01k' },
   { key = '/', mods = 'CMD', action = act.SendString '\x01[' },
   -- WezTerm keys
 }
