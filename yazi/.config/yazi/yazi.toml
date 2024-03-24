@@ -5,6 +5,6 @@ show_hidden = false
 show_symlink = true
 
 [plugin]
-# prepend_previewers = [
-#   { name = "*.md", run = "glow" },
-# ]
+prepend_previewers = [
+  { name = "*.md", run = "glow" },
+]
