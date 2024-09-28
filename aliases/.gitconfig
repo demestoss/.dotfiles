@@ -1,3 +1,6 @@
 [user]
 	name = Dmitriy Popov
-	email = dmitriiy.popov@cteleport.com
+	email = me@demestoss.com
+
+[includeIf "gitdir:~/work/**"]
+    path = ~/work/.gitconfig

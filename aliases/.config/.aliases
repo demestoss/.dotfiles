@@ -19,17 +19,17 @@ alias grep='grep --color=auto'
 alias cl="clear"
 
 function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
+    local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
 }
 
 # Vim
 # alias vim=nvim
-# alias vi=nvim
+alias v=nvim
 
 # Git
 # Check if main exists and use instead of master
@@ -113,15 +113,27 @@ alias gstaa='git stash apply'
 alias gstl='git stash list'
 alias gstd='git stash drop'
 
+alias gcam!='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
+
 gpa() {
     gaa
-    gcam $1
+    if [ -z "$1" ] 
+    then
+        gcam!
+    else
+        gcam $1
+    fi
     gp
 }
 
 gpasup() {
     gaa
-    gcam $1
+    if [ -z "$1" ] 
+    then
+        gcam!
+    else
+        gcam $1
+    fi
     gpsup
 }
 
@@ -163,3 +175,28 @@ alias ghc="gh copilot"
 alias "?git"="gh copilot suggest -t git"
 alias "??"="gh copilot suggest -t shell"
 alias "?e"="gh copilot explain"
+
+alias br="bun run"
+alias bi="bun install"
+
+function dark() {
+    ln -fs ~/personal/dracula/themes/alacritty/dracula-pro-van-helsing.toml ~/.config/alacritty/themes/_active.toml
+    touch ~/.config/alacritty/alacritty.toml
+}
+function light() {
+    ln -fs ~/personal/dracula/themes/alacritty/dracula-pro-alucard.toml ~/.config/alacritty/themes/_active.toml
+    touch ~/.config/alacritty/alacritty.toml
+}
+
+gpe() {
+  gaa
+  gitmoji -c
+  gp
+}
+
+gpesup() {
+  gaa
+  gitmoji -c
+  gpsup
+}
+

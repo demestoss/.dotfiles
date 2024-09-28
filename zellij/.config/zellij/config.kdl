@@ -185,12 +185,30 @@ keybinds clear-defaults=true {
 	}
 }
 
+themes {
+  dracula-light {
+    bg "#acb0be" // Surface2
+    fg "#acb0be" // Surface2
+    red "#d20f39"
+    green "#A3144D"
+    blue "#1e66f5"
+    yellow "#df8e1d"
+    magenta "#ea76cb" // Pink
+    orange "#fe640b" // Peach
+    cyan "#04a5e5" // Sky
+    black "#dce0e8" // Crust
+    white "#4c4f69" // Text
+  }
+}
+
 on_force_close "detach"
 simplified_ui true
-theme "catppuccin-mocha"
+pane_frames false
+default_layout "compact"
+theme "dracula-light"
 
 pane_viewport_serialization true
-mouse_mode false
+mouse_mode true
 
 // pane_frames false
 ui {

@@ -8,3 +8,9 @@ if [[ -z $DOTFILES ]]; then
 fi
 
 STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES zsh  $DOTFILES/install
+
+
+ln -fs ~/personal/dracula/themes/zsh/dracula-pro.zsh-theme ~/.oh-my-zsh/themes/dracula-pro.zsh-theme
+ln -fs ~/personal/dracula/themes/vim/colors ~/.config/nvim/colors
+ln -fs ~/personal/dracula/themes/vim/autoload ~/.config/nvim/autoload
+

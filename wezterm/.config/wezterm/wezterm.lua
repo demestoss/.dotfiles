@@ -15,8 +15,8 @@ config.window_frame = {
   font_size = 14.0,
 }
 
-config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.8
+-- config.window_decorations = "TITLE"
+-- config.window_background_opacity = 0.8
 config.macos_window_background_blur = 80
 
 config.window_padding = {
@@ -27,7 +27,7 @@ config.window_padding = {
 }
 
 -- For example, changing the color scheme:
-config.color_scheme = 'Tokyo Night'
+config.color_scheme = 'tokyonight-storm'
 
 -- config.leader = { key = 'a', mods = 'CTRL' }
 
@@ -46,7 +46,18 @@ config.keys = {
   { key = 'n', mods = 'CMD', action = act.SendString '\x01,' },
   -- { key = 'k', mods = 'CMD', action = act.SendString '\x01k' },
   { key = 'j', mods = 'CMD', action = act.SendString '\x01k' },
-  { key = '/', mods = 'CMD', action = act.SendString '\x01[' },
+  -- { key = '/', mods = 'CMD', action = act.SendString '\x01[' },
+  { key = '1', mods = 'CMD', action = act.SendString '\x011' },
+  { key = '2', mods = 'CMD', action = act.SendString '\x012' },
+  { key = '3', mods = 'CMD', action = act.SendString '\x013' },
+  { key = '4', mods = 'CMD', action = act.SendString '\x014' },
+  { key = '5', mods = 'CMD', action = act.SendString '\x015' },
+  { key = '6', mods = 'CMD', action = act.SendString '\x017' },
+  { key = '^', mods = 'CMD', action = act.SendString '\x01^' },
+  { key = '/', mods = 'CMD', action = act.SendString '\x01v' },
+  { key = '\\', mods = 'CMD', action = act.SendString '\x01-' },
+  -- { key = 'LeftArrow', mods = 'CMD', acton = act.SendKey { key = 'h', mods = 'CTRL' }, },
+  -- { key = 'RightArrow', mods = 'CMD', acton = act.SendKey { key = 'l', mods = 'CTRL' }, },
   -- WezTerm keys
 }
 

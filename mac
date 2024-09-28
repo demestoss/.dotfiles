@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="yabai,wezterm"
+    STOW_FOLDERS="yabai,wezterm,alacritty"
 fi
 
 if [[ -z $DOTFILES ]]; then

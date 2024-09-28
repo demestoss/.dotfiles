@@ -124,12 +124,18 @@ export LC_NUMERIC="en_US.UTF-8"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# CodeWhisperer post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
-
 # bun completions
 [ -s "/Users/dmitriy/.bun/_bun" ] && source "/Users/dmitriy/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
