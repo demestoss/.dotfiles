@@ -4,6 +4,9 @@
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
 	url = git@github.com:demestoss/nvim.git
+[submodule "lazyvim/.config/lazyvim"]
+	path = lazyvim/.config/lazyvim
+	url = git@github.com:demestoss/lazyvim.git
 [submodule "work"]
 	path = work
 	url = git@github.com:demestoss/work-dotfiles.git

@@ -1,6 +1,6 @@
 {
 	"No props component": {
-		"prefix": "rc",
+		"prefix": "crc",
 		"description": "Basic React component without props",
 		"body": [
 			"import { Stack } from '@c-teleport/web-ui-kit'",
@@ -12,7 +12,7 @@
 		]
 	},
   "Default component with props": {
-		"prefix": "rcp",
+		"prefix": "crcp",
 		"description": "Basic React component with props and namespace setup",
 		"body": [
 			"import { Stack } from '@c-teleport/web-ui-kit'",
