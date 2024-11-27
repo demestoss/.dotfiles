@@ -9,4 +9,5 @@ export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
 export VIMDATA="$HOME/.local/share/nvim"
 
 export PATH="$HOME/.local/scripts:$PATH"
+export NVIM_APPNAME=lazyvim
 
