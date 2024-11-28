@@ -115,16 +115,18 @@ autoload -Uz compinit && compinit
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-if [ "$ALACRITTY" = "true" ]
-then
-  local ALACRITTY_THEME=$(defaults read -g AppleInterfaceStyle 2>/dev/null || echo "Light")
-  if [ "$ALACRITTY_THEME" = "Dark" ]
-  then
-    dark
-  else
-    dark
-  fi
-fi
+[ -n "$WEZTERM_PANE" ] && export NVIM_LISTEN_ADDRESS="/tmp/nvim$WEZTERM_PANE"
+
+# if [ "$ALACRITTY" = "true" ]
+# then
+#   local ALACRITTY_THEME=$(defaults read -g AppleInterfaceStyle 2>/dev/null || echo "Light")
+#   if [ "$ALACRITTY_THEME" = "Dark" ]
+#   then
+#     dark
+#   else
+#     dark
+#   fi
+# fi
 
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
