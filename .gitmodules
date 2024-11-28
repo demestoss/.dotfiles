@@ -1,15 +1,12 @@
 [submodule "personal"]
 	path = personal
 	url = git@github.com:demestoss/.dotfiles-personal.git
-[submodule "nvim/.config/nvim"]
-	path = nvim/.config/nvim
-	url = git@github.com:demestoss/nvim.git
 [submodule "work"]
 	path = work
 	url = git@github.com:demestoss/work-dotfiles.git
 [submodule "bin/.local/scripts/zellij-smart-sessionizer"]
 	path = bin/.local/scripts/zellij-smart-sessionizer
 	url = git@github.com:demestoss/zellij-smart-sessionizer.git
-[submodule "lazyvim/.config/lazyvim"]
-	path = lazyvim/.config/lazyvim
+[submodule "nvim/.config/nvim"]
+	path = nvim/.config/nvim
 	url = git@github.com:demestoss/lazyvim.git

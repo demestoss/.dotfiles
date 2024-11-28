@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="i3,picom,wezterm,alacritty"
+    STOW_FOLDERS="wezterm,alacritty"
 fi
 
 if [[ -z $DOTFILES ]]; then
