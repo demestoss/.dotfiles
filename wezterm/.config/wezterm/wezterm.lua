@@ -183,7 +183,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     { Text = get_current_working_dir(tab) },
   })
 
-  local title = string.format(" [%s] %s", tab.tab_index + 1, cwd)
+  local title = string.format(" [%s] %s ", tab.tab_index + 1, cwd)
 
   if has_unseen_output then
     return {
