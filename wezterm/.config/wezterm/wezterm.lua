@@ -8,6 +8,14 @@ config.color_scheme = "tokyonight"
 
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 18.0
+
+config.max_fps = 240
+config.animation_fps = 120
+config.cursor_blink_rate = 800
+config.default_cursor_style = "BlinkingBlock"
+config.cursor_blink_ease_in = 'Constant'
+config.cursor_blink_ease_out = 'Constant'
+
 config.window_frame = {
   font_size = 14.0,
 }
@@ -110,8 +118,8 @@ config.keys = {
     }),
   },
   {
-    key = "-",
-    mods = "CMD",
+    key = "_",
+    mods = "CMD|SHIFT",
     action = act.SplitPane({
       direction = "Down",
       size = { Percent = 50 },
