@@ -55,6 +55,15 @@ local mux = wezterm.mux
 config.keys = {
   -- Workspace keys
   { key = "s", mods = "CMD", action = workspace_switcher.switch_workspace() },
+  -- {
+  --   key = "k",
+  --   mods = "CMD",
+  --   action = wezterm.action.SpawnCommandInNewTab({
+  --     args = {
+  --       "/opt/homebrew/bin/aerospace list-windows --all",
+  --     },
+  --   }),
+  -- },
   { key = "j", mods = "CMD", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES", title = "Switcher" }) },
   {
     key = "r",
@@ -88,7 +97,7 @@ config.keys = {
   { key = "[", mods = "LEADER", action = act.ActivateCopyMode },
 
   -- Tab keys
-  { key = "q", mods = "CMD", action = act.ShowTabNavigator },
+  { key = "e", mods = "CMD", action = act.ShowTabNavigator },
   { key = "t", mods = "CMD", action = act.SpawnTab("CurrentPaneDomain") },
   { key = "w", mods = "CMD", action = act.CloseCurrentTab({ confirm = true }) },
   { key = "]", mods = "CMD", action = act.ActivateTabRelative(1) },
@@ -157,7 +166,7 @@ wezterm.on("gui-startup", function(cmd)
     cwd = dotfiles_path,
     args = args,
   })
-  build_pane:send_text("nvim\n")
+  -- build_pane:send_text("nvim\r")
   mux.set_active_workspace("dotfiles")
 end)
 -- set up keymap for quickly jumping to this workspace
@@ -218,10 +227,13 @@ smart_splits.apply_to_config(config, {
   -- modifier keys to combine with direction_keys
   modifiers = {
     move = "CTRL", -- modifier to use for pane movement, e.g. CTRL+h to move left
-    resize = "META", -- modifier to use for pane resize, e.g. META+h to resize to the left
+    resize = "CTRL|SHIFT", -- modifier to use for pane resize, e.g. META+h to resize to the left
   },
 })
 -- Smart splits
 
+config.set_environment_variables = {
+  PATH = "/opt/homebrew/bin:" .. os.getenv("PATH"),
+}
 -- and finally, return the configuration to wezterm
 return config

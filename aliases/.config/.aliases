@@ -19,12 +19,17 @@ alias grep='grep --color=auto'
 alias cl="clear"
 
 function yy() {
-    local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
-    yazi "$@" --cwd-file="$tmp"
-    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-        cd -- "$cwd"
-    fi
-    rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
+# Aerospace
+function ff() {
+  aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
 }
 
 # Vim
@@ -34,39 +39,39 @@ alias v=nvim
 # Git
 # Check if main exists and use instead of master
 function git_main_branch() {
-    command git rev-parse --git-dir &>/dev/null || return
-    local ref
-    for ref in refs/{heads,remotes/{origin,upstream}}/{main,trunk,mainline,default}; do
-        if command git show-ref -q --verify $ref; then
-            echo ${ref:t}
-            return
-        fi
-    done
-    echo master
+  command git rev-parse --git-dir &>/dev/null || return
+  local ref
+  for ref in refs/{heads,remotes/{origin,upstream}}/{main,trunk,mainline,default}; do
+    if command git show-ref -q --verify $ref; then
+      echo ${ref:t}
+      return
+    fi
+  done
+  echo master
 }
 
 # Check for develop and similarly named branches
 function git_develop_branch() {
-    command git rev-parse --git-dir &>/dev/null || return
-    local branch
-    for branch in dev devel development; do
-        if command git show-ref -q --verify refs/heads/$branch; then
-            echo $branch
-            return
-        fi
-    done
-    echo develop
+  command git rev-parse --git-dir &>/dev/null || return
+  local branch
+  for branch in dev devel development; do
+    if command git show-ref -q --verify refs/heads/$branch; then
+      echo $branch
+      return
+    fi
+  done
+  echo develop
 }
 
 function git_current_branch() {
-    local ref
-    ref=$(__git_prompt_git symbolic-ref --quiet HEAD 2> /dev/null)
-    local ret=$?
-    if [[ $ret != 0 ]]; then
-        [[ $ret == 128 ]] && return  # no git repo.
-        ref=$(__git_prompt_git rev-parse --short HEAD 2> /dev/null) || return
-    fi
-    echo ${ref#refs/heads/}
+  local ref
+  ref=$(__git_prompt_git symbolic-ref --quiet HEAD 2>/dev/null)
+  local ret=$?
+  if [[ $ret != 0 ]]; then
+    [[ $ret == 128 ]] && return # no git repo.
+    ref=$(__git_prompt_git rev-parse --short HEAD 2>/dev/null) || return
+  fi
+  echo ${ref#refs/heads/}
 }
 
 alias ga='git add'
@@ -116,31 +121,29 @@ alias gstd='git stash drop'
 alias gcam!='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
 
 gpa() {
-    gaa
-    if [ -z "$1" ] 
-    then
-        gcam!
-    else
-        gcam $1
-    fi
-    gp
+  gaa
+  if [ -z "$1" ]; then
+    gcam!
+  else
+    gcam $1
+  fi
+  gp
 }
 
 gpasup() {
-    gaa
-    if [ -z "$1" ] 
-    then
-        gcam!
-    else
-        gcam $1
-    fi
-    gpsup
+  gaa
+  if [ -z "$1" ]; then
+    gcam!
+  else
+    gcam $1
+  fi
+  gpsup
 }
 
 gcbd() {
-    gcd
-    gl
-    git checkout $1 2>/dev/null || git checkout -b $1
+  gcd
+  gl
+  git checkout $1 2>/dev/null || git checkout -b $1
 }
 
 # Tmux
@@ -163,12 +166,12 @@ alias zk='zellij kill-session'
 # Git + Tmux
 
 gct() {
-    NAME=""
-    if [ "$1" != "" ]; then
-        NAME="$1"/
-    fi
-    NAME+=$(tsn)
-    gcbd $NAME
+  NAME=""
+  if [ "$1" != "" ]; then
+    NAME="$1"/
+  fi
+  NAME+=$(tsn)
+  gcbd $NAME
 }
 
 alias ghc="gh copilot"
@@ -180,12 +183,12 @@ alias br="bun run"
 alias bi="bun install"
 
 function dark() {
-    ln -fs ~/personal/dracula/themes/alacritty/dracula-pro-van-helsing.toml ~/.config/alacritty/themes/_active.toml
-    touch ~/.config/alacritty/alacritty.toml
+  ln -fs ~/personal/dracula/themes/alacritty/dracula-pro-van-helsing.toml ~/.config/alacritty/themes/_active.toml
+  touch ~/.config/alacritty/alacritty.toml
 }
 function light() {
-    ln -fs ~/personal/dracula/themes/alacritty/dracula-pro-alucard.toml ~/.config/alacritty/themes/_active.toml
-    touch ~/.config/alacritty/alacritty.toml
+  ln -fs ~/personal/dracula/themes/alacritty/dracula-pro-alucard.toml ~/.config/alacritty/themes/_active.toml
+  touch ~/.config/alacritty/alacritty.toml
 }
 
 gpe() {
@@ -199,4 +202,3 @@ gpesup() {
   gitmoji -c
   gpsup
 }
-
