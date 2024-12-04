@@ -8,8 +8,8 @@ export VISUAL=nvim
 
 ## command history configuration
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt hist_ignore_dups  # ignore duplication command history list
 setopt hist_ignore_space # ignore when commands starts with space
 setopt share_history     # share command history data
@@ -33,7 +33,7 @@ FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
 
 
 # User configuration
-source $XDG_CONFIG_HOME/.aliases
+source $ZDOTDIR/.aliases
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -56,8 +56,6 @@ export LC_CTYPE="en_US.UTF-8"
 export LC_MESSAGES="en_US.UTF-8"
 export LC_MONETARY="en_US.UTF-8"
 export LC_NUMERIC="en_US.UTF-8"
-
-# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
 # bun completions
 [ -s "/Users/dmitriy/.bun/_bun" ] && source "/Users/dmitriy/.bun/_bun"
@@ -115,19 +113,7 @@ autoload -Uz compinit && compinit
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-[ -n "$WEZTERM_PANE" ] && export NVIM_LISTEN_ADDRESS="/tmp/nvim$WEZTERM_PANE"
-
-# if [ "$ALACRITTY" = "true" ]
-# then
-#   local ALACRITTY_THEME=$(defaults read -g AppleInterfaceStyle 2>/dev/null || echo "Light")
-#   if [ "$ALACRITTY_THEME" = "Dark" ]
-#   then
-#     dark
-#   else
-#     dark
-#   fi
-# fi
-
+# [ -n "$WEZTERM_PANE" ] && export NVIM_LISTEN_ADDRESS="/tmp/nvim$WEZTERM_PANE"
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 

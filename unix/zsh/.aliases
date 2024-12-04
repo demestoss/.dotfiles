@@ -155,14 +155,6 @@ alias tksv='tmux kill-server'
 alias tsk='tmux kill-session -t'
 alias tsn='tmux display-message -p "#S"'
 
-# Zellij
-alias za='zellij attach'
-alias zl='zellij list-sessions'
-alias zh='zellij help'
-alias zc='zellij -s'
-alias zka='zellij kill-all-sessions'
-alias zk='zellij kill-session'
-
 # Git + Tmux
 
 gct() {
@@ -181,15 +173,6 @@ alias "?e"="gh copilot explain"
 
 alias br="bun run"
 alias bi="bun install"
-
-function dark() {
-  ln -fs ~/personal/dracula/themes/alacritty/dracula-pro-van-helsing.toml ~/.config/alacritty/themes/_active.toml
-  touch ~/.config/alacritty/alacritty.toml
-}
-function light() {
-  ln -fs ~/personal/dracula/themes/alacritty/dracula-pro-alucard.toml ~/.config/alacritty/themes/_active.toml
-  touch ~/.config/alacritty/alacritty.toml
-}
 
 gpe() {
   gaa

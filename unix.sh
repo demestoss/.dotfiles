@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="bin,nvim,zsh,aliases,wezterm"
+    STOW_FOLDERS="unix"
 fi
 
 if [[ -z $DOTFILES ]]; then
@@ -8,3 +8,5 @@ if [[ -z $DOTFILES ]]; then
 fi
 
 STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES zsh  $DOTFILES/install
+
+ln -fs ~/.dotfiles/zsh/.zshenv ~/.zshenv

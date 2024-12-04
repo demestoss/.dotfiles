@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="wezterm,alacritty"
+    STOW_FOLDERS="mac"
 fi
 
 if [[ -z $DOTFILES ]]; then
@@ -8,3 +8,4 @@ if [[ -z $DOTFILES ]]; then
 fi
 
 STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES zsh  $DOTFILES/install
+

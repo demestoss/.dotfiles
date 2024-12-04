@@ -1,4 +1,4 @@
-tmux/.config/tmux/plugins/
+unix/tmux/plugins/
 wezterm/.config/wezterm/plugins/
 nvim/lazy-lock.json
 bin/.local/state

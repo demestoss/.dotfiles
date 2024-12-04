@@ -1,7 +1,7 @@
 . "$HOME/.cargo/env"
 
 export XDG_CONFIG_HOME="$HOME/.config"
-export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
+export ZDOTDIR="$XDG_CONFIG_HOME/.config/zsh"
 
 export EDITOR=nvim
 export VISUAL=nvim

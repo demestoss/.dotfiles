@@ -5,12 +5,12 @@ or
 pacman -S stow
 ```
 
-Bootstrap configs for linux
+Bootstrap configs for unix
 ```
-zsh linux
+zsh unix
 ```
 
 Bootstrap configs for linux desktop
 ```
-zsh linux-desktop
+zsh linux
 ```
