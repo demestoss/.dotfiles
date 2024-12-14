@@ -1,6 +1,12 @@
-default_startup_script = "~/.config/sesh/scripts/default.sh"
+[default_session]
+script_path = "~/.config/sesh/scripts/default.sh"
 
-[[startup_scripts]]
-session_path = "~/.dotfiles"
+[[session]]
+name = "Config 🛠"
+path = "~/.dotfiles"
 script_path = "~/.config/sesh/scripts/dotfiles.sh"
 
+[[session]]
+name = "Downloads 📥"
+path = "~/Downloads"
+startup_command = "ls"

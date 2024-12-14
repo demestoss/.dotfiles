@@ -9,4 +9,4 @@ fi
 
 STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES zsh  $DOTFILES/install
 
-ln -fs ~/.dotfiles/zsh/.zshenv ~/.zshenv
+ln -fs ~/.dotfiles/unix/zsh/.zshenv ~/.zshenv
