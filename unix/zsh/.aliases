@@ -185,3 +185,12 @@ gpesup() {
   gitmoji -c
   gpsup
 }
+
+wtr() {
+  wget -qO- https://wttr.in/ | ghead -n -1
+}
+
+wtr2() {
+  wget -qO- https://v2.wttr.in/ | ghead -n -1
+}
+

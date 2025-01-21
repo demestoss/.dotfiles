@@ -1,0 +1,16 @@
+font-size = 16
+theme = tokyonight_night
+cursor-style = block_hollow
+cursor-style-blink = true
+mouse-hide-while-typing = true
+background-opacity = 0.95
+background-blur-radius = 20
+
+macos-titlebar-proxy-icon = hidden
+macos-auto-secure-input = false
+macos-secure-input-indication = true
+
+clipboard-read = allow
+clipboard-write = allow
+clipboard-paste-protection = false
+clipboard-trim-trailing-spaces = true
