@@ -6,3 +6,4 @@ bin/.local/share
 bin/.local/bin
 .git
 unix/zsh/.zcompdump*
+unix/nushell/history.txt

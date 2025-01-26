@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# SSH
-# alias s="kitty +kitten ssh"
-
 # File Tree
 alias ll="eza -l -g --icons --git"
 alias llt="eza -1 --icons --tree --git-ignore"
@@ -18,22 +15,12 @@ alias md='mkdir -p'
 alias grep='grep --color=auto'
 alias cl="clear"
 
-function yy() {
-  local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
-  yazi "$@" --cwd-file="$tmp"
-  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-    cd -- "$cwd"
-  fi
-  rm -f -- "$tmp"
-}
-
 # Aerospace
 function ff() {
   aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
 }
 
 # Vim
-# alias vim=nvim
 alias v=nvim
 
 # Git
@@ -144,26 +131,6 @@ gcbd() {
   gcd
   gl
   git checkout $1 2>/dev/null || git checkout -b $1
-}
-
-# Tmux
-alias ta='tmux attach -t'
-alias tad='tmux attach -d -t'
-alias ts='tmux new-session -s'
-alias tl='tmux list-sessions'
-alias tksv='tmux kill-server'
-alias tsk='tmux kill-session -t'
-alias tsn='tmux display-message -p "#S"'
-
-# Git + Tmux
-
-gct() {
-  NAME=""
-  if [ "$1" != "" ]; then
-    NAME="$1"/
-  fi
-  NAME+=$(tsn)
-  gcbd $NAME
 }
 
 alias ghc="gh copilot"
