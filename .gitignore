@@ -5,3 +5,4 @@ bin/.local/state
 bin/.local/share
 bin/.local/bin
 .git
+unix/zsh/.zcompdump*
