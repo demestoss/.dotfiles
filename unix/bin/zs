@@ -111,7 +111,7 @@ select_layout() {
   header="Select layout for '$session_name'"
   layout_path=$(
     {
-      echo -e "default\tdefault" "$layouts" |
+      echo "$layouts" |
         awk '{
           full = $0
           bn = full
@@ -119,6 +119,7 @@ select_layout() {
           sub(/\.[^.]+$/, "", bn)
           print full "\t" bn
         }'
+        echo -e "default\tdefault"
     } | $(get_fuzzy_cmd) --with-nth=2 --reverse --header "$header" --tabstop=4 --ansi --preview="$(get_preview_cmd) {1}" | cut -f1
   )
 
@@ -174,8 +175,6 @@ outside_zellij() {
 
   session_name=$(get_session_name "$project_dir" "$1")
   session=$(echo "$sessions_list" | grep "^$session_name$")
-
-  # cd "$project_dir" || exit 1
 
   # If no session, create with the default layout
   if [ "$session" = "" ]; then
