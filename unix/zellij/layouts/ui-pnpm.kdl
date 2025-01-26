@@ -1,0 +1,18 @@
+layout {
+    pane size=1 borderless=true {
+        plugin location="tab-bar" {
+            hide_swap_layout_indication true
+        }
+    }
+
+    pane name="ide" stacked=true {
+        pane name="editor" command="nvim" expanded=true
+        pane name="term"
+    }
+
+    floating_panes {
+        pane command="pnpm" {
+            args "sb"
+        }
+    }
+}

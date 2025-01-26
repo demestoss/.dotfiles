@@ -77,7 +77,7 @@ inner.horizontal = 20
 inner.vertical = 20
 outer.left = 20
 outer.bottom = 20
-outer.top = 20
+outer.top = 50
 outer.right = 20
 
 # 'main' binding mode declaration
@@ -188,3 +188,16 @@ backspace = ['close-all-windows-but-current', 'mode main']
 
 # [mode.apps.binding]
 # alt-w = ['exec-and-forget open -a /Applications/WezTerm.app', 'mode main']
+
+[[on-window-detected]]
+    if.app-id = 'us.zoom.xos'
+    run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+    if.app-id = 'com.tinyspeck.slackmacgap'
+    run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+    if.app-id = 'com.brave.Browser'
+    run = 'move-node-to-workspace 1'
+
