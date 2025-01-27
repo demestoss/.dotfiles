@@ -9,6 +9,10 @@ alias la = eza -lh --all
 alias grep = grep --color=auto
 alias cl = clear
 
+# Mac
+alias nu-open = open
+alias open = ^open
+
 # Vim
 alias v = nvim
 

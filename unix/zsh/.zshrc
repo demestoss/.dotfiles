@@ -42,7 +42,7 @@ unsetopt beep
 [ -f ~/.cargo/env ] && source $HOME/.cargo/env
 
 eval "$(fnm env --use-on-cd)"
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh)"
 
 export LC_ALL="en_US.UTF-8"
@@ -70,10 +70,6 @@ autoload -Uz compinit && compinit
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
-
-if [[ -z "$ZELLIJ" ]] && [[ -z "$SSH_CONNECTION"  ]]; then
-  zs
-fi
 
 # pnpm
 export PNPM_HOME="/Users/dmitriy/Library/pnpm"
