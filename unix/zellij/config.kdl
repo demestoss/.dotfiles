@@ -37,3 +37,4 @@ default_layout "stacked"
 
 on_force_close "detach"
 
+default_shell "/opt/homebrew/bin/nu"
